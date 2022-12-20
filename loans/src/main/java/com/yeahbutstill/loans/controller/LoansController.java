@@ -1,19 +1,24 @@
 package com.yeahbutstill.loans.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.yeahbutstill.loans.config.LoansServiceConfig;
 import com.yeahbutstill.loans.model.Customer;
 import com.yeahbutstill.loans.model.Loans;
+import com.yeahbutstill.loans.model.Properties;
 import com.yeahbutstill.loans.repository.LoansRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/v1/loans")
+@RequestMapping(value = "/api/v1/loan")
 public class LoansController {
+
+	@Autowired
+	LoansServiceConfig loansServiceConfig;
 
 	@Autowired
 	private LoansRepository loansRepository;
@@ -29,5 +34,18 @@ public class LoansController {
 		}
 
 	}
+
+	@GetMapping("/properties")
+	public String getPropertyDetails() throws JsonProcessingException {
+
+		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+		Properties properties = new Properties(loansServiceConfig.getMsg(), loansServiceConfig.getBuildVersion(),
+				loansServiceConfig.getMailDetails(), loansServiceConfig.getActiveBranches());
+		String jsonStr = ow.writeValueAsString(properties);
+
+		return jsonStr;
+
+	}
+
 
 }

@@ -1,19 +1,24 @@
 package com.eazybytes.cards.controller;
 
+import com.eazybytes.cards.config.CardsServiceConfig;
 import com.eazybytes.cards.model.Cards;
 import com.eazybytes.cards.model.Customer;
+import com.eazybytes.cards.model.Properties;
 import com.eazybytes.cards.repository.CardsRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/v1/cards")
+@RequestMapping(value = "/api/v1/card")
 public class CardsController {
+
+	@Autowired
+	CardsServiceConfig cardsServiceConfig;
 
 	@Autowired
 	private CardsRepository cardsRepository;
@@ -27,6 +32,18 @@ public class CardsController {
 		} else {
 			return null;
 		}
+
+	}
+
+	@GetMapping("/properties")
+	public String getPropertyDetails() throws JsonProcessingException {
+
+		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+		Properties properties = new Properties(cardsServiceConfig.getMsg(), cardsServiceConfig.getBuildVersion(),
+				cardsServiceConfig.getMailDetails(), cardsServiceConfig.getActiveBranches());
+		String jsonStr = ow.writeValueAsString(properties);
+
+		return jsonStr;
 
 	}
 
