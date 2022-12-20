@@ -3,9 +3,11 @@ package com.yeahbutstill.loans.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.yeahbutstill.loans.model.Customer;
 import com.yeahbutstill.loans.model.Loans;
+import org.junit.jupiter.api.Test;
+
 import java.util.List;
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoansControllerSymflowerTest {
 	@Test
