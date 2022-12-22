@@ -1,6 +1,5 @@
 package com.eazybytes.cards.config;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,15 +11,12 @@ import java.util.Map;
 
 @Configuration
 @ConfigurationProperties(prefix = "cards")
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Getter @Setter @ToString
 public class CardsServiceConfig {
 
-    private String msg;
-    private String buildVersion;
-    private Map<String, String> mailDetails;
-    private List<String> activeBranches;
+	 private String msg;
+	 private String buildVersion;
+	 private Map<String, String> mailDetails;
+	 private List<String> activeBranches;
 
 }

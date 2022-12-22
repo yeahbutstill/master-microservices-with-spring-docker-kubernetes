@@ -14,17 +14,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/v1/card")
 public class CardsController {
 
 	@Autowired
-	CardsServiceConfig cardsServiceConfig;
-
-	@Autowired
 	private CardsRepository cardsRepository;
+	
+	@Autowired
+	CardsServiceConfig cardsConfig;
 
 	@PostMapping("/myCards")
-	public List<Cards> getCardDetails(@RequestBody Customer customer) {
+	public List<Cards> getCardDetails(@RequestHeader("eazybank-correlation-id") String correlationid,@RequestBody Customer customer) {
 
 		List<Cards> cards = cardsRepository.findByCustomerId(customer.getCustomerId());
 		if (cards != null) {
@@ -34,13 +33,13 @@ public class CardsController {
 		}
 
 	}
-
-	@GetMapping("/properties")
+	
+	@GetMapping("/cards/properties")
 	public String getPropertyDetails() throws JsonProcessingException {
 
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-		Properties properties = new Properties(cardsServiceConfig.getMsg(), cardsServiceConfig.getBuildVersion(),
-				cardsServiceConfig.getMailDetails(), cardsServiceConfig.getActiveBranches());
+		Properties properties = new Properties(cardsConfig.getMsg(), cardsConfig.getBuildVersion(),
+				cardsConfig.getMailDetails(), cardsConfig.getActiveBranches());
 		String jsonStr = ow.writeValueAsString(properties);
 
 		return jsonStr;

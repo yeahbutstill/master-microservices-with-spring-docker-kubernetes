@@ -2,7 +2,11 @@
 
 ## Build Image
 ```shell
+## with unit test
 mvn spring-boot:build-image
+
+## skip unit test
+mvn clean install spring-boot:build-image -Dmaven.test.skip=true
 ```
 
 ## Push Image local to repository

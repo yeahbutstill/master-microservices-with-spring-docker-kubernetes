@@ -1,6 +1,8 @@
 package com.eazybytes.cards.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -9,9 +11,6 @@ import java.sql.Date;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
 public class Cards {
 
 	@Id
