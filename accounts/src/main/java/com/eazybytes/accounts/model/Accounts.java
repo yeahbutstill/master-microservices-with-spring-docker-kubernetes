@@ -1,13 +1,14 @@
 package com.eazybytes.accounts.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.time.LocalDate;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter @Setter @ToString

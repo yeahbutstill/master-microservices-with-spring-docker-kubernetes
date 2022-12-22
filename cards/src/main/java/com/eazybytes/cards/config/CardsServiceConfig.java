@@ -1,14 +1,22 @@
+/**
+ * 
+ */
 package com.eazybytes.cards.config;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+/**
+ * @author Eazy Bytes
+ *
+ */
 @Configuration
 @ConfigurationProperties(prefix = "cards")
 @Getter @Setter @ToString

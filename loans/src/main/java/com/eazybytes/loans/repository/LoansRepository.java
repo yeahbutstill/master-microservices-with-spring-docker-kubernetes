@@ -1,10 +1,11 @@
 package com.eazybytes.loans.repository;
 
-import com.eazybytes.loans.model.Loans;
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.eazybytes.loans.model.Loans;
 
 @Repository
 public interface LoansRepository extends CrudRepository<Loans, Long> {

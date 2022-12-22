@@ -1,10 +1,11 @@
 package com.eazybytes.cards.repository;
 
-import com.eazybytes.cards.model.Cards;
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.eazybytes.cards.model.Cards;
 
 @Repository
 public interface CardsRepository extends CrudRepository<Cards, Long> {
