@@ -1,5 +1,23 @@
 # master-microservices-with-spring-docker-kubernetes
 
+## Start Keycloak
+From a terminal start Keycloak with the following command:
+```shell
+docker run -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:20.0.2 start-dev
+```
+This will start Keycloak exposed on the local port 8080. It will also create an initial admin user with username admin and password admin.
+https://www.keycloak.org/getting-started/getting-started-docker .
+
+## check realm configurations
+http://localhost:7080/realms/master/.well-known/openid-configuration
+
+## hit http method POST using postman
+http://localhost:7080/realms/master/protocol/openid-connect/token
+
+add inside the body urlencoded. client_id, client_secret, scope and grant_type.. to get access token
+
+
+
 ## Build Image
 ```shell
 ## with unit test
