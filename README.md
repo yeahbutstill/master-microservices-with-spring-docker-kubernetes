@@ -17,3 +17,16 @@ docker push docker.io/{{DOCKER_HUB_USERNAME}}/{{IMAGE_NAME}}
 docker push docker.io/2819930922/accounts
 ```
 
+## Zipkin
+```text
+http://localhost:9411/
+```
+## Grafana
+```text
+http://localhost:3000/
+```
+
+## Eureka
+```text
+http://localhost:8070/
+```
