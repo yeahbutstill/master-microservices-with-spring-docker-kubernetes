@@ -1,8 +1,4 @@
 
-b
-2accounts/docker-compose/default/docker-compose.yml,a/5/a53c17fe832db7693d03785ac051ebaf175c2d3b
-a
-1accounts/docker-compose/monitoring/prometheus.yml,8/5/85edf2103fad222590a40b831396e6183b17cd0e
 t
 Daccounts/src/main/java/com/yeahbutstill/accounts/model/Accounts.java,0/7/07daeec4f9ebe82549c4ecfab5dcc515f3e5002b
 t
@@ -17,12 +13,8 @@ Faccounts/src/main/java/com/yeahbutstill/accounts/model/Properties.java,7/a/7a9
 Saccounts/src/main/java/com/yeahbutstill/accounts/repository/AccountsRepository.java,8/5/854100be8398b0f0cdcfb4644930206aa95914a2
 q
 Aaccounts/src/main/java/com/yeahbutstill/accounts/model/Cards.java,2/c/2c6acebfc92e774d20b820ab6aae430f51b41f7a
-e
-5accounts/docker-compose/monitoring/docker-compose.yml,b/1/b146726b1c6a1b397d8fe0f9523d2de87aa4aecc
 C
 accounts/.gitignore,5/8/58836e02c7981b698078e724a04fe00fc03d8bbc
-‚
-Raccounts/src/main/java/com/yeahbutstill/accounts/config/AccountsServiceConfig.java,a/b/ab351fe72bbbf0e5e10c193a195dc1f924d75d93
 …
 Uaccounts/src/main/java/com/yeahbutstill/accounts/service/client/LoansFeignClient.java,0/d/0dda22728e84c3b7a874fc149f0dda8ff80ebef5
 …
@@ -33,21 +25,7 @@ Ugatewayserver/src/main/java/com/yeahbutstill/gatewayserver/filters/FilterUtilit
 Zgatewayserver/src/main/java/com/yeahbutstill/gatewayserver/filters/RequestTraceFilter.java,3/7/378f9c9336984e2955fdd646dd20eb8ec3f0a82b
 ‹
 [gatewayserver/src/main/java/com/yeahbutstill/gatewayserver/filters/ResponseTraceFilter.java,9/5/951f5f97afa8546ebc844b9c1d6bed7851cf3c50
-y
-Iaccounts/src/main/java/com/yeahbutstill/accounts/AccountsApplication.java,d/0/d0482aa08918d18854317ff8afc9422bab5d1e21
-ƒ
-Saccounts/src/main/java/com/yeahbutstill/accounts/controller/AccountsController.java,b/f/bf365c8cbfce249adb44fc10e05c3c2ceecc013c
-=
-cards/pom.xml,0/3/03d98379707442ca08c75c7f83cbeac97dbff921
 …
 Uconfigserver/src/main/java/com/yeahbutstill/configserver/ConfigserverApplication.java,7/a/7aa74b7f6c5cc3fae00edbd42f668d98316d9b99
-D
-configserver/pom.xml,f/1/f16afbec2e8c0eddd1dcff3e8e4756e53404058b
-D
-eurekaserver/pom.xml,6/7/67fb8a88b9284616f5b0d1ee12ee457c4b4d22a2
-=
-loans/pom.xml,6/8/681af2a2e51bca85d1898b7c770ef512fc922995
-@
-accounts/pom.xml,1/5/15d963d6c4feb0f26c44457a7d5d39d67f86cc12
 p
 @loans/src/main/java/com/yeahbutstill/loans/LoansApplication.java,0/0/00b212c72916b8f6bb391fe8ddeefa8bb693e6df

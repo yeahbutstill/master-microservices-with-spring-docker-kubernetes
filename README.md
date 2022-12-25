@@ -8,14 +8,24 @@ docker run -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin
 This will start Keycloak exposed on the local port 8080. It will also create an initial admin user with username admin and password admin.
 https://www.keycloak.org/getting-started/getting-started-docker .
 
-## check realm configurations
+## Check realm configurations
 http://localhost:7080/realms/master/.well-known/openid-configuration
 
-## hit http method POST using postman
+## Hit http method POST using postman
 http://localhost:7080/realms/master/protocol/openid-connect/token
-
 add inside the body urlencoded. client_id, client_secret, scope and grant_type.. to get access token
 
+## Oauth2 Authorization Code Grant Flow
+```text
+http://localhost:8072/eazybank/cards/card/properties
+http://localhost:8072/eazybank/accounts/account/properties
+http://localhost:8072/eazybank/loans/loan/properties
+```
+
+## Start Zipkin
+```shell
+docker run -d -p 9411:9411 openzipkin/zipkin
+```
 
 
 ## Build Image
